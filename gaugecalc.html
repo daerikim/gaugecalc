@@ -5,43 +5,117 @@
 
     <!-- Webpage Title -->
     <title>게이지 계산기</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        function multiplyst() {
+            let mygaugest = $('#mygaugest').val();
+            let ptgaugest = $('#ptgaugest').val();
+            let ptst = $('#ptst').val();
+
+            return (ptst / ptgaugest) * mygaugest
+        }
+        function multiplyrow() {
+            let mygaugerow = $('#mygaugerow').val();
+            let ptgaugerow = $('#ptgaugerow').val();
+            let ptrow = $('#ptrow').val();
+
+
+            return (ptrow / ptgaugerow) * mygaugerow
+
+        }
+
+        function multiply() {
+            let st = multiplyst();
+            let row = multiplyrow();
+
+
+            $('#myst').val(st);
+            $('#myrow').val(row);
+
+
+
+        }
+    </script>
+
+    <style>
+        .mytitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<!-- Webpage Title -->
+<title>게이지 계산기</title>
 </head>
 
 <body>
     <form name="gaugecal">
-        <div>
-            <p>게이지 계산기<p>
-        </div>
-        <div>
+        <div class="mytitle">
+            <div>
+                <p>게이지 계산기<p>
+            </div>
             내 게이지:
-            <input type="number" name="mygaugest"> 코수
-            <input type="number" name="mygaugerow"> 단수
-        </div>
-        <br>
-        <div>
-            도안 게이지:
-            <input type="number" name="ptgaugest"> 코수
-            <input type="number" name="ptgaugerow"> 단수
-        </div>
-        <br>
-        <div>
-            도안에서 제시된
-            <input type="number" name="ptst"> 코수
-            <input type="number" name="ptrow"> 단수
-        </div>
-        <br>
-        내가 떠야할 코수/단수는?
-        <br>
-        <div>
+            <div class="form-group row">
+                <label for="example-number-input" class="col-2 col-form-label"></label>
+                <div class="col-10">
+                    <input class="form-control" type="number" id="mygaugest"> 코수
+                    <input class="form-control" type="number" id="mygaugerow"> 단수
+                </div>
+            </div>
             <br>
-            <input type="button" value="계산하기" onclick="multiply()">
+            도안 게이지:
+            <div class="form-group row">
+                <label for="example-number-input" class="col-2 col-form-label"></label>
+                <div class="col-10">
+                    <input class="form-control" type="number" id="ptgaugest"> 코수
+                    <input class="form-control" type="number" id="ptgaugerow"> 단수
+                </div>
+            </div>
+            <br>
+            도안에서 떠야할
+            <div class="form-group row">
+                <label for="example-number-input" class="col-2 col-form-label"> </label>
+                <div class="col-10">
+                    <input class="form-control" type="number" id="ptst"> 코수
+                    <input class="form-control" type="number" id="ptrow"> 단수
+                </div>
+            </div>
+            <br>
+            내가 떠야할 코수/단수는?
+            <br>
+            <div>
+                <br>
+                <input type="button" value="계산하기" onclick="multiply()">
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="example-number-input" class="col-2 col-form-label"> </label>
+                <div class="col-10">
+                    <input class="form-control" type="number" id="myst"> 코
+                    <input class="form-control" type="number" id="myrow"> 단
+                </div>
+            </div>
         </div>
-        <br>
-        <div>
-            <input type="number" name="myst"> 코
-            <input type="number" name="myrow"> 단
-        </div>
-
     </form>
 </body>
 
