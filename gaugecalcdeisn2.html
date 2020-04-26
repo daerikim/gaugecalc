@@ -150,7 +150,7 @@
         .form-wrap form .button {
             width: 100%;
             padding: .8em 0 10px .8em;
-            background-color: #28A55F;
+            background-color: rgb(240, 138, 22);
             border: none;
             color: #fff;
             cursor: pointer;
@@ -158,13 +158,13 @@
         }
 
         .form-wrap form .button:hover {
-            background-color: #4FDA8C;
+            background-color: rgb(252, 152, 58);
         }
 
         .calbutton {
             width: 100%;
             padding: .8em 0 10px .8em;
-            background-color: #28A55F;
+            background-color: rgb(240, 138, 22);
             border: none;
             color: #fff;
             cursor: pointer;
@@ -232,6 +232,8 @@
             text-align: center;
             font-size: 14px;
         }
+
+        
     </style>
 </head>
 
@@ -245,19 +247,24 @@
 
         <div class="tabs-content">
             <div>
-                📏게이지 계산기
+                📏게이지 계산기:
+                <br> 내 게이지를 입력하고, 도안 게이지와 도안에서 떠야할 코수/단수를 입력하면 내가 떠야할 코수/단수가 나옵니다.
                 <br><br>
             </div>
             <div id="signup-tab-content" class="active">
                 <form class="signup-form" action="" method="post">
+                    <label >내 게이지 코수:</label>
                     <input type="number" class="input" id="mygaugest" autocomplete="off" placeholder="내 게이지 코수를 입력하세요">
+                    <label>도안 게이지 코수:</label>
                     <input type="number" class="input" id="ptgaugest" placeholder="도안 게이지 코수를 입력하세요">
+                    <label>도안 코수:</label>
                     <input type="number" class="input" id="ptst" autocomplete="off" placeholder="도안 코수를 입력하세요">
-                    <input type="submit" class="button" onclick="multiply()" value="계산하기">
+                    <input type="button" class="button" onclick="multiply()" value="계산하기">
                 </form>
                 <br>
-                <div class="calbutton"> <button onclick="multiply()">계산하기</button></div>
+
                 <form class="signup-form" action="" method="post">
+                    <label>내가 떠야할 코수는?</label>
                     <input type="number" class="input" id="myst" autocomplete="off" placeholder="결과가 이곳에 표시됩니다">
                 </form>
 
@@ -272,14 +279,18 @@
 
             <div id="login-tab-content">
                 <form class="signup-form" action="" method="post">
+                    <label >내 게이지 단수:</label>
                     <input type="number" class="input" id="mygaugest" autocomplete="off" placeholder="내 게이지 단수를 입력하세요">
+                    <label >도안 게이지 단수:</label>
                     <input type="number" class="input" id="ptgaugest" placeholder="도안 게이지 단수를 입력하세요">
+                    <label >도안 단수:</label>
                     <input type="number" class="input" id="ptst" autocomplete="off" placeholder="도안 단수를 입력하세요">
-                    <input type="submit" class="button" onclick="multiply()" value="계산하기">
+                    <input type="button" class="button" onclick="multiply()" value="계산하기">
                 </form>
                 
                 <br>
                 <form class="signup-form" action="" method="post">
+                    <label >내가 떠야할 단수는?</label>
                     <input type="number" class="input" id="myst" autocomplete="off" placeholder="결과가 이곳에 표시됩니다">
                 </form>
                 <!--.login-form-->
